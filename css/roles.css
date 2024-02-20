@@ -1,0 +1,51 @@
+.aside-menu li a{
+    position: relative;
+}
+.aside-menu li a.nav-drop-dow::after {
+    content: "";
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%) rotate(42deg);
+    right: 10px;
+    width: 8px;
+    height: 8px;
+    border-bottom: 1px solid #363636;
+    border-right: 1px solid #363636;
+    transition: 0.3s;
+}
+.aside-menu li a.nav-drop-dow.open::after{
+    transform: translateY(-50%) rotate(224deg); 
+}
+ul.nav-drop-dowm-wrp {
+    padding-left: 10px;
+   display: none;
+}
+ul.nav-drop-dowm-wrp.open {
+   display: block;
+}
+.main-table-content.roles .table-wrapper table  th {
+    text-transform: uppercase;
+    font: var(--h5);
+    letter-spacing: 1px;
+    white-space: nowrap;
+    width: 75%;
+}
+.main-table-content.roles .table-content-title-right .btn {
+    border-radius: 6px;
+}
+.main-table-content.new-role .project-selection-wrp ul {
+    max-width: 640px;
+}
+.main-table-content.new-role .project-selection-wrp li {
+    width: 100%;
+}
+.main-table-content.new-role form {
+    align-items: flex-start;
+    flex-direction: column;
+}
+.main-table-content.new-role .save-btn {
+    margin-top: 20px;
+}
+.main-table-content.new-role .save-btn .btn {
+    border-radius: 6px;
+}

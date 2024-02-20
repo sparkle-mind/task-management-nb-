@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add-to-performance-new</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/add-to-performance-new.css">
+    <!-- ======= OPEN SENS ========== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ========= COMPONENTS JS ========= -->
+<script>
+    function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /*loop through a collection of all HTML elements:*/
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("w3-include-html");
+            if (file) {
+                /*make an HTTP request using the attribute value as the file name:*/
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) {
+                            elmnt.innerHTML = this.responseText;
+                            executeScripts(elmnt);
+                        }
+                        if (this.status == 404) {
+                            elmnt.innerHTML = "Page not found.";
+                        }
+                        /*remove the attribute, and call this function once more:*/
+                        elmnt.removeAttribute("w3-include-html");
+                        includeHTML();
+                    }
+                }
+                console.log("object", xhttp);
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                /*exit the function:*/
+                return;
+            }
+        }
+    };
+  
+    function executeScripts(container) {
+        var scripts = container.getElementsByTagName('script');
+        for (var i = 0; i < scripts.length; i++) {
+            var script = document.createElement('script');
+            script.text = scripts[i].text;
+            container.appendChild(script).parentNode.removeChild(script);
+        }
+    }
+  </script>
+  <!-- ========= COMPONENTS JS ========= -->
+
+<main class="main-wrp">
+<div class="overlay"></div>
+<div class="main-wrp-inner flex justify-between">
+<!-- ========== aside menu start ============ -->
+<aside id="aside-menu" w3-include-html="/Componets/Comman/aside.html"></aside>
+<!-- ========== aside menu end ============ -->
+<div id="right-content">
+      <!-- ========== header start ============ -->
+      <div w3-include-html="/Componets/Comman/header.html"></div>
+      <!-- ========== header end ============ -->
+<div class="main-table-content add-to-performance-new">
+    <div class="container">
+    <div class="main-table-content-inner">
+        <div class="main-table-cont-top">
+        <div class="table-content-title flex justify-between align-end">
+            <div class="table-content-title-left">
+              <h1>Resource performance</h1>
+              <ul class="table-breadcrumbs flex align-center">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Performance</a></li>
+                <li class="active"><a href="#">Resource performance</a></li>
+              </ul>
+            </div>
+        </div>
+        <div class="add-to-per-pro-row flex justify-between">
+            <div class="atp-left flex align-end">
+                <div class="atp-left-img">
+                    <img src="images/resouce-profile.png" alt="resouce-profile">
+                </div>
+                <div class="atp-left-cont">
+                    <h4>Belle Ferguson</h4>
+                    <ul class="flex align-center">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M15.834 2.5H12.5007C11.5802 2.5 10.834 3.24619 10.834 4.16667V14.1667C10.834 16.0076 12.3264 17.5 14.1673 17.5C16.0083 17.5 17.5007 16.0076 17.5007 14.1667V4.16667C17.5007 3.24619 16.7545 2.5 15.834 2.5" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M15.834 2.5H12.5007C11.5802 2.5 10.834 3.24619 10.834 4.16667V14.1667C10.834 16.0076 12.3264 17.5 14.1673 17.5C16.0083 17.5 17.5007 16.0076 17.5007 14.1667V4.16667C17.5007 3.24619 16.7545 2.5 15.834 2.5" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10.8328 6.12498L9.16615 4.45831C8.51532 3.80768 7.46032 3.80768 6.80949 4.45831L4.45282 6.81498C3.80218 7.46581 3.80218 8.52081 4.45282 9.17165L11.9528 16.6716" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10.8328 6.12498L9.16615 4.45831C8.51532 3.80768 7.46032 3.80768 6.80949 4.45831L4.45282 6.81498C3.80218 7.46581 3.80218 8.52081 4.45282 9.17165L11.9528 16.6716" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6.08333 10.8334H4.16667C3.24619 10.8334 2.5 11.5796 2.5 12.5V15.8334C2.5 16.7538 3.24619 17.5 4.16667 17.5H14.1667" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6.08333 10.8334H4.16667C3.24619 10.8334 2.5 11.5796 2.5 12.5V15.8334C2.5 16.7538 3.24619 17.5 4.16667 17.5H14.1667" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14.1667 14.1667V14.175" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14.1667 14.1667V14.175" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Team Lead
+                        </li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <rect x="3.33398" y="4.16663" width="13.3333" height="13.3333" rx="2" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="3.33398" y="4.16663" width="13.3333" height="13.3333" rx="2" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13.3327 2.5V5.83333" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13.3327 2.5V5.83333" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6.66667 2.5V5.83333" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6.66667 2.5V5.83333" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.33398 9.16667H16.6673" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.33398 9.16667H16.6673" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9.16602 12.5H9.99935" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9.16602 12.5H9.99935" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10.0007 12.5V15" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10.0007 12.5V15" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Joined April 2021</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="atp-right">
+                <div class="atp-right-in">
+                <h4>Statistics</h4>
+                <div class="rdbr-item-bottom">
+                    <ul class="flex justify-between">
+                      <li>
+                        <div class="rdbr-icn bg-sky">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                <circle cx="9" cy="7.5" r="4" stroke="#00CFE8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M3 21.5V19.5C3 17.2909 4.79086 15.5 7 15.5H11C13.2091 15.5 15 17.2909 15 19.5V21.5" stroke="#00CFE8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 10.75C15.5858 10.75 15.25 11.0858 15.25 11.5C15.25 11.9142 15.5858 12.25 16 12.25V10.75ZM22 12.25C22.4142 12.25 22.75 11.9142 22.75 11.5C22.75 11.0858 22.4142 10.75 22 10.75V12.25ZM19.75 8.5C19.75 8.08579 19.4142 7.75 19 7.75C18.5858 7.75 18.25 8.08579 18.25 8.5H19.75ZM18.25 14.5C18.25 14.9142 18.5858 15.25 19 15.25C19.4142 15.25 19.75 14.9142 19.75 14.5H18.25ZM16 12.25H22V10.75H16V12.25ZM18.25 8.5V14.5H19.75V8.5H18.25Z" fill="#00CFE8"/>
+                              </svg>
+                        </div>
+                        <div class="rdbr-list-cont">
+                          <h5>20</h5>
+                          <p>Positive Remarks</p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="rdbr-icn bg-org">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                                <circle cx="9.5" cy="7.5" r="4" stroke="#EA5455" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M3.5 21.5V19.5C3.5 17.2909 5.29086 15.5 7.5 15.5H11.5C13.7091 15.5 15.5 17.2909 15.5 19.5V21.5" stroke="#EA5455" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16.5 11.5H22.5" stroke="#EA5455" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                        </div>
+                        <div class="rdbr-list-cont">
+                          <h5>3</h5>
+                          <p>Negative Remarks</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+            
+
+        </div>
+       </div>
+       <div class="table-wrapper atp-new">
+        <table>
+          <thead>
+            <tr>
+              <th>Remarks by</th>
+              <th>Position</th>
+              <th>Date</th>
+              <th>Comment</th>
+              <th>Type</th>
+            </tr>
+            
+          </thead>
+          <tbody>
+              <tr>
+              <td>Raj Patel</td>
+              <td>Team Leader</td>
+              <td>11/24/2023</td>
+              <td>Design and publish stunning 3D & animated websites...</td>
+              <td>
+              <span class="status-btn completed">
+                Positive
+             </span>
+             </td>
+              </tr>
+              <tr>
+                <td>Raj Patel</td>
+                <td>Team Leader</td>
+                <td>11/24/2023</td>
+                <td>Design and publish stunning 3D & animated websites...</td>
+                <td>
+                <span class="status-btn Disapproved">
+                    Negetive
+               </span>
+               </td>
+                </tr>
+             
+          </tbody>
+        </table>
+        
+        </div>
+       <div class="save add-to-per">
+        <a href="#" class="btn">Add Performance</a>
+       </div>
+
+    </div>  
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<script>
+    includeHTML();
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>

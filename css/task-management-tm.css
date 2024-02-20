@@ -1,0 +1,27 @@
+.table-wrapper table td .status-btn.start,
+.table-wrapper table td .status-btn.stop {
+    border-radius: 6px;
+    background-color: #1097F9;
+    box-shadow: -2px -2px 4px -2px rgba(24, 39, 75, 0.08), 4px 2px 4px -2px rgba(24, 39, 75, 0.12);
+    color: var(--white);
+    font-size: 14px;
+    padding: 13px 21px;
+}
+.table-wrapper table td .status-btn.stop {
+    background-color: #FF5C5C;
+}
+.main-table-content.task-management-tm  .filter-btn .btn {
+    border-radius: 6px;
+    background-color: var(--btn-clr);
+    color: var(--white);
+    border: 1px solid var(--btn-clr);
+}
+.main-table-content.task-management-tm  .filter-btn .btn:hover {
+    background-color: var(--black);
+}
+.main-table-content.task-management-tm .table-wrapper table td {
+    padding: 10px 26px;
+}
+.main-table-content.task-management-tm .table-wrapper table tbody td {
+    vertical-align: middle;
+}

@@ -1,0 +1,62 @@
+.main-table-content.planning .project-selection-wrp ul {
+    max-width: 865px;
+    width: 100%;
+    margin:0 12px 0 -12px;
+}
+.main-table-content.planning form{
+    display: flex;
+    align-items: flex-end;
+}
+.main-table-content.planning .project-selection-wrp li {
+    width: 33.33%;
+    padding: 0 12px;
+}
+.main-table-content.planning  .filter-btn {
+    margin: 0;
+}
+.main-table-content.planning  .filter-btn .btn{
+    border-radius: 6px;
+    background-color: transparent;
+    color: var(--btn-clr);
+    border: 1px solid var(--btn-clr);
+}
+.main-table-content.planning  .filter-btn .btn:hover{
+    background-color: var(--btn-clr);
+    color: var(--white);
+}
+.table-wrapper table td  .status-btn.Pending{
+    background-color: var(--orange);
+    color: #FF9F43;
+}
+.table-wrapper table td  .status-btn.Disapproved{
+    background-color: var(--hold-clr);
+    color: var(--light-red);
+}
+.table-wrapper table tbody td {
+    white-space: nowrap;
+}
+
+@media only screen and (max-width: 767px) {
+    .main-table-content.planning .project-selection-wrp li {
+        width: 50%;
+    }
+    .main-table-content.planning  .filter-btn {
+        margin: 20px 0;
+    }
+}
+
+
+@media only screen and (max-width: 575px) {
+    .main-table-content.planning .project-selection-wrp li {
+        width: 100%;
+        padding: 0;
+    }
+    .main-table-content.planning form {
+       
+        flex-direction: column;
+    }
+    .main-table-content.planning .project-selection-wrp ul {
+        margin: 0;
+    }
+    
+}

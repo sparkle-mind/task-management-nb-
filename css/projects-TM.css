@@ -1,0 +1,13 @@
+.projects-tm .table-wrapper table  td,
+.projects-tm .table-wrapper table  th {
+    width: 40%;
+}
+.main-table-content.projects-tm  .filter-btn .btn {
+    border-radius: 6px;
+    background-color: var(--btn-clr);
+    color: var(--white);
+    border: 1px solid var(--btn-clr);
+}
+.main-table-content.projects-tm  .filter-btn .btn:hover {
+    background-color: var(--black);
+}

@@ -1,0 +1,32 @@
+.main-table-content.permissions .project-selection-wrp li {
+    width: 100%;
+    margin: 0;
+}
+
+.main-table-content.permissions .project-selection-wrp ul {
+    max-width: 290px;
+}
+.main-table-content.permissions .table-wrapper table th:not(:first-child),
+.main-table-content.permissions .table-wrapper table tbody td:not(:first-child) {
+    text-align: center;
+    width: 10%;
+}
+.main-table-content.permissions .table-wrapper table  th {
+    text-transform: uppercase;
+    font: var(--h5);
+    letter-spacing: 1px;
+    white-space: nowrap;
+    width: 25%;
+}
+.main-table-content.permissions  .filter-btn {
+    margin: 0;
+}
+
+@media only screen and (max-width:575px){
+    .main-table-content.permissions .project-selection-wrp ul {
+        max-width: 100%;
+    }
+    .main-table-content.permissions  .filter-btn {
+        margin:20px 0 0 0;
+    }
+}

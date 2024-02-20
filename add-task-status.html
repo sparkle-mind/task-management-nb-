@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add-task-status</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/planning.css">
+    <link rel="stylesheet" href="css/team.css">
+    <link rel="stylesheet" href="css/add-task-status.css">
+    <!-- ======= OPEN SENS ========== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ========= COMPONENTS JS ========= -->
+<script>
+    function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /*loop through a collection of all HTML elements:*/
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("w3-include-html");
+            if (file) {
+                /*make an HTTP request using the attribute value as the file name:*/
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) {
+                            elmnt.innerHTML = this.responseText;
+                            executeScripts(elmnt);
+                        }
+                        if (this.status == 404) {
+                            elmnt.innerHTML = "Page not found.";
+                        }
+                        /*remove the attribute, and call this function once more:*/
+                        elmnt.removeAttribute("w3-include-html");
+                        includeHTML();
+                    }
+                }
+                console.log("object", xhttp);
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                /*exit the function:*/
+                return;
+            }
+        }
+    };
+  
+    function executeScripts(container) {
+        var scripts = container.getElementsByTagName('script');
+        for (var i = 0; i < scripts.length; i++) {
+            var script = document.createElement('script');
+            script.text = scripts[i].text;
+            container.appendChild(script).parentNode.removeChild(script);
+        }
+    }
+  </script>
+  <!-- ========= COMPONENTS JS ========= -->
+<main class="main-wrp">
+<div class="overlay"></div>
+<div class="main-wrp-inner flex justify-between">
+        <!-- ========== aside menu start ============ -->
+        <aside id="aside-menu" w3-include-html="/Componets/Comman/aside.html"></aside>
+        <!-- ========== aside menu end ============ -->
+<div id="right-content">
+   <!-- ========== header start ============ -->
+  <div w3-include-html="/Componets/Comman/header.html"></div>
+  <!-- ========== header end ============ -->
+<div class="main-table-content planning team add-task-status">
+    <div class="container">
+    <div class="main-table-content-inner">
+        <div class="main-table-cont-top">
+        <div class="table-content-title flex justify-between align-end">
+            <div class="table-content-title-left">
+              <h1>Add Task Status</h1>
+              <ul class="table-breadcrumbs flex align-center">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Task Status</a></li>
+                <li class="active"><a href="#">Add Task Status</a></li>
+              </ul>
+            </div>
+        </div>
+        <div class="project-selection-wrp">
+            <form action="post">
+                <ul class="flex">
+                   
+                    <li>
+                        <label for="type-here">Status Name</label>
+                        <input type="text" placeholder="Type here...">
+                    </li>
+                    <li>
+                        <label for="Status">Status</label>
+                        <select class="custom-select" name="Status">
+                            <option>-Select-</option>
+                            <option value="ideal">ideal</option>
+                            <option value="working"> working</option>
+                            <option value="pop">Pop</option>
+                           
+                        </select>
+                    </li>
+                    
+                </ul>
+
+                <div class="save-btn">
+                <a href="#" class="btn ">save</a>
+            </div>
+            </form>
+        </div>
+    </div>
+   
+        
+    </div>  
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<script>
+    includeHTML();
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>

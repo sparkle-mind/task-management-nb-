@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>view-project</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/user-details.css">
+    <link rel="stylesheet" href="css/view-project.css">
+    <!-- ======= OPEN SENS ========== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- ========= COMPONENTS JS ========= -->
+<script>
+  function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /*loop through a collection of all HTML elements:*/
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          /*search for elements with a certain atrribute:*/
+          file = elmnt.getAttribute("w3-include-html");
+          if (file) {
+              /*make an HTTP request using the attribute value as the file name:*/
+              xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function () {
+                  if (this.readyState == 4) {
+                      if (this.status == 200) {
+                          elmnt.innerHTML = this.responseText;
+                          executeScripts(elmnt);
+                      }
+                      if (this.status == 404) {
+                          elmnt.innerHTML = "Page not found.";
+                      }
+                      /*remove the attribute, and call this function once more:*/
+                      elmnt.removeAttribute("w3-include-html");
+                      includeHTML();
+                  }
+              }
+              console.log("object", xhttp);
+              xhttp.open("GET", file, true);
+              xhttp.send();
+              /*exit the function:*/
+              return;
+          }
+      }
+  };
+
+  function executeScripts(container) {
+      var scripts = container.getElementsByTagName('script');
+      for (var i = 0; i < scripts.length; i++) {
+          var script = document.createElement('script');
+          script.text = scripts[i].text;
+          container.appendChild(script).parentNode.removeChild(script);
+      }
+  }
+</script>
+<!-- ========= COMPONENTS JS ========= -->
+    <main class="main-wrp">
+    <div class="overlay"></div>
+    <div class="main-wrp-inner flex justify-between">
+    <!-- ========== aside menu start ============ -->
+    <aside id="aside-menu" w3-include-html="/Componets/Comman/aside.html"></aside>
+    <!-- ========== aside menu end ============ -->
+    <div id="right-content">
+        <!-- ========== header start ============ -->
+    <div w3-include-html="/Componets/Comman/header.html"></div>
+        <!-- ========== header end ============ -->
+    <div class="main-table-content planning resource-details view-project">
+            <div class="container">
+            <div class="main-table-content-inner"> 
+                <div class="main-table-cont-top">
+                <div class="table-content-title flex justify-between align-end">
+                    <div class="table-content-title-left">
+                      <h1>Project Details</h1>
+                      <ul class="table-breadcrumbs flex align-center">
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="#">Resources</a></li>
+                        <li class="active"><a href="#">Project details</a></li>
+                      </ul>
+                    </div>
+                    <a href="edit-project.html" class="btn">edit</a>
+                </div>
+              
+                </div>
+
+<section class="view-project-top-section">
+  <div class="vp-top-row flex ">
+      <div class="vp-top-left">
+        <div class="vp-top-left-inner">
+      <h3>ShareMyRide</h3>
+      <div class="vp-tl-row flex align-center">
+        <span>Project Manager:</span>
+        <h5>Raj Patel</h5>
+      </div>
+      </div>
+      </div>
+    <div class="vp-top-right">
+      <div class="rdbr-item">
+        <div class="rdbr-item-bottom">
+          <ul class="flex justify-between">
+            <li>
+              <div class="rdbr-icn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <path d="M12 3.5V12.5H21" stroke="#7367F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="12" cy="12.5" r="9" stroke="#7367F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="rdbr-list-cont">
+                <h5>12/12/2023</h5>
+                <p>Start Date</p>
+              </div>
+            </li>
+            <li>
+              <div class="rdbr-icn blue-bg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <circle cx="9" cy="7.5" r="4" stroke="#00CFE8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M3 21.5V19.5C3 17.2909 4.79086 15.5 7 15.5H11C13.2091 15.5 15 17.2909 15 19.5V21.5" stroke="#00CFE8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M16 3.62988C17.7699 4.08305 19.0078 5.67787 19.0078 7.50488C19.0078 9.33189 17.7699 10.9267 16 11.3799" stroke="#00CFE8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M21 21.4999V19.4999C20.9896 17.6845 19.7578 16.1037 18 15.6499" stroke="#00CFE8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="rdbr-list-cont">
+                <h5>12/12/2023</h5>
+                <p>Start Date</p>
+              </div>
+            </li>
+            <li>
+              <div class="rdbr-icn green-bg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <path d="M16.7 8.5C16.2928 7.34458 15.2239 6.55285 14 6.5H10C8.34315 6.5 7 7.84315 7 9.5C7 11.1569 8.34315 12.5 10 12.5H14C15.6569 12.5 17 13.8431 17 15.5C17 17.1569 15.6569 18.5 14 18.5H10C8.77606 18.4472 7.70722 17.6554 7.3 16.5" stroke="#28C76F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12.75 3.5C12.75 3.08579 12.4142 2.75 12 2.75C11.5858 2.75 11.25 3.08579 11.25 3.5H12.75ZM11.25 6.5C11.25 6.91421 11.5858 7.25 12 7.25C12.4142 7.25 12.75 6.91421 12.75 6.5H11.25ZM12.75 18.5C12.75 18.0858 12.4142 17.75 12 17.75C11.5858 17.75 11.25 18.0858 11.25 18.5H12.75ZM11.25 21.5C11.25 21.9142 11.5858 22.25 12 22.25C12.4142 22.25 12.75 21.9142 12.75 21.5H11.25ZM11.25 3.5V6.5H12.75V3.5H11.25ZM11.25 18.5V21.5H12.75V18.5H11.25Z" fill="#28C76F"/>
+                </svg>
+              </div>
+              <div class="rdbr-list-cont">
+                <h5>120 Hrs</h5>
+                <p>Estimated Hours</p>
+              </div>
+            </li>
+            <li>
+              <div class="rdbr-icn green-bg ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <path d="M16.7 8.5C16.2928 7.34458 15.2239 6.55285 14 6.5H10C8.34315 6.5 7 7.84315 7 9.5C7 11.1569 8.34315 12.5 10 12.5H14C15.6569 12.5 17 13.8431 17 15.5C17 17.1569 15.6569 18.5 14 18.5H10C8.77606 18.4472 7.70722 17.6554 7.3 16.5" stroke="#28C76F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12.75 3.5C12.75 3.08579 12.4142 2.75 12 2.75C11.5858 2.75 11.25 3.08579 11.25 3.5H12.75ZM11.25 6.5C11.25 6.91421 11.5858 7.25 12 7.25C12.4142 7.25 12.75 6.91421 12.75 6.5H11.25ZM12.75 18.5C12.75 18.0858 12.4142 17.75 12 17.75C11.5858 17.75 11.25 18.0858 11.25 18.5H12.75ZM11.25 21.5C11.25 21.9142 11.5858 22.25 12 22.25C12.4142 22.25 12.75 21.9142 12.75 21.5H11.25ZM11.25 3.5V6.5H12.75V3.5H11.25ZM11.25 18.5V21.5H12.75V18.5H11.25Z" fill="#28C76F"/>
+                </svg>
+              </div>
+              <div class="rdbr-list-cont">
+                <h5>80 Hrs</h5>
+                <p>Spent Hours</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</div>
+</section>
+<section class="view-project-mid-section">
+<div class="vp-mid-inner">
+  <div class="vp-mid-in-row flex">
+<div class="vp-mid-item">
+  <div class="vp-mid-item-in">
+<h3>Platforms</h3>
+<ul>
+  <li>
+    <div class="vp-mid-itm-svg green-bg">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+        <rect x="2.75" y="4.58337" width="16.5" height="12.8333" rx="2" stroke="#28C76F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M2.75 6.41663L11 11.9166L19.25 6.41663" stroke="#28C76F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h5>User Application</h5>
+  </li>
+  <li>
+    <div class="vp-mid-itm-svg blue-bg">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+        <path d="M9.1665 12.8334C9.76996 13.4493 10.5959 13.7964 11.4582 13.7964C12.3204 13.7964 13.1464 13.4493 13.7498 12.8334L17.4165 9.16673C18.6822 7.90108 18.6822 5.84905 17.4165 4.58339C16.1509 3.31774 14.0988 3.31774 12.8332 4.58339L12.3748 5.04173" stroke="#00CFE8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12.833 9.16658C12.2296 8.55069 11.4036 8.20361 10.5414 8.20361C9.67911 8.20361 8.85315 8.55069 8.2497 9.16658L4.58303 12.8332C3.31738 14.0989 3.31738 16.1509 4.58303 17.4166C5.84868 18.6822 7.90071 18.6822 9.16636 17.4166L9.6247 16.9582" stroke="#00CFE8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h5>Admin Panel</h5>
+  </li>
+  <li>
+    <div class="vp-mid-itm-svg orange-bg">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+        <path d="M2.75 11H5.5" stroke="#FF9F43" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10.9998 2.75V5.5" stroke="#FF9F43" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M7.14997 7.14997L5.1333 5.1333" stroke="#FF9F43" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14.8501 7.14997L16.8668 5.1333" stroke="#FF9F43" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M7.14997 14.85L5.1333 16.8666" stroke="#FF9F43" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11 11L19.25 13.75L15.5833 15.5833L13.75 19.25L11 11" stroke="#FF9F43" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h5>Website</h5>
+  </li>
+  <li>
+    <div class="vp-mid-itm-svg">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+        <ellipse cx="8.25016" cy="6.41667" rx="3.66667" ry="3.66667" stroke="#7367F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M2.75 19.25V17.4167C2.75 15.3916 4.39162 13.75 6.41667 13.75H10.0833C12.1084 13.75 13.75 15.3916 13.75 17.4167V19.25" stroke="#7367F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14.6665 2.86902C16.2889 3.28442 17.4237 4.74634 17.4237 6.4211C17.4237 8.09586 16.2889 9.55778 14.6665 9.97318" stroke="#7367F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M19.25 19.25V17.4166C19.2404 15.7525 18.1113 14.3035 16.5 13.8875" stroke="#7367F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h5>Driver Application</h5>
+  </li>
+</ul>
+  </div>
+</div>
+<div class="vp-mid-item resource">
+  <div class="vp-mid-item-in">
+<h3>Resources</h3>
+  <ul>
+    <li>
+      <div class="vp-mid-itm-cont">
+        <h5>Shubham Chikani</h5>
+        <span>iOs Developer</span>
+      </div>
+    <div class="vp-mid-itm-btn">
+      <a href="#">Profile</a>
+    </div>
+      </li>
+      <li>
+        <div class="vp-mid-itm-cont">
+          <h5>Shubham Chikani</h5>
+          <span>iOs Developer</span>
+        </div>
+      <div class="vp-mid-itm-btn">
+        <a href="#">Profile</a>
+      </div>
+        </li>
+        <li>
+          <div class="vp-mid-itm-cont">
+            <h5>Shubham Chikani</h5>
+            <span>iOs Developer</span>
+          </div>
+        <div class="vp-mid-itm-btn">
+          <a href="#">Profile</a>
+        </div>
+          </li>
+          <li>
+            <div class="vp-mid-itm-cont">
+              <h5>Shubham Chikani</h5>
+              <span>iOs Developer</span>
+            </div>
+          <div class="vp-mid-itm-btn">
+            <a href="#">Profile</a>
+          </div>
+            </li>
+            <li>
+              <div class="vp-mid-itm-cont">
+                <h5>Shubham Chikani</h5>
+                <span>iOs Developer</span>
+              </div>
+            <div class="vp-mid-itm-btn">
+              <a href="#">Profile</a>
+            </div>
+              </li>
+              <li>
+                <div class="vp-mid-itm-cont">
+                  <h5>Shubham Chikani</h5>
+                  <span>iOs Developer</span>
+                </div>
+              <div class="vp-mid-itm-btn">
+                <a href="#">Profile</a>
+              </div>
+                </li>
+                <li>
+                  <div class="vp-mid-itm-cont">
+                    <h5>Shubham Chikani</h5>
+                    <span>iOs Developer</span>
+                  </div>
+                <div class="vp-mid-itm-btn">
+                  <a href="#">Profile</a>
+                </div>
+                  </li>
+                  <li>
+                    <div class="vp-mid-itm-cont">
+                      <h5>Shubham Chikani</h5>
+                      <span>iOs Developer</span>
+                    </div>
+                  <div class="vp-mid-itm-btn">
+                    <a href="#">Profile</a>
+                  </div>
+                    </li>
+  
+  </ul>
+  </div>
+</div>
+<div class="vp-mid-item milestones">
+  <div class="vp-mid-item-in">
+<h3>Milestones</h3>
+<ul>
+  <li>
+    <h5>Milestone1</h5>
+    <div class="vp-mid-itm-date">
+      12/12/2024
+    </div>
+  </li>
+  <li>
+    <h5>Milestone1</h5>
+    <div class="vp-mid-itm-date">
+      12/12/2024
+    </div>
+  </li>
+  <li>
+    <h5>Milestone1</h5>
+    <div class="vp-mid-itm-date">
+      12/12/2024
+    </div>
+  </li>
+  <li>
+    <h5>Milestone1</h5>
+    <div class="vp-mid-itm-date">
+      12/12/2024
+    </div>
+  </li>
+  <li>
+    <h5>Milestone1</h5>
+    <div class="vp-mid-itm-date">
+      12/12/2024
+    </div>
+  </li>
+  <li>
+    <h5>Milestone1</h5>
+    <div class="vp-mid-itm-date">
+      12/12/2024
+    </div>
+  </li>
+ 
+</ul>
+  </div>
+</div>
+  </div>
+</div>
+</section>
+<section class="view-project-bottom-section">
+  <div class="vp-bottom-inner">
+    <div class="vp-bottom-row flex">
+      <div class="vp-bottom-left">
+        <div class="vp-bottom-left-in">
+          <div class="vp-bottom-left-p-ana flex justify-between">
+            <div class="vp-bottom-left-p-ana-lft">
+              <h4>Project Analytics</h4>
+              <span>Weekly Overview</span>
+            </div>
+           <div class="vp-btm-rgt-dot">
+            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="22" viewBox="0 0 23 22" fill="none">
+              <circle cx="11.6667" cy="11" r="0.916667" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="11.6667" cy="11" r="0.916667" stroke="white" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="11.6667" cy="17.4167" r="0.916667" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="11.6667" cy="17.4167" r="0.916667" stroke="white" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <ellipse cx="11.6667" cy="4.58329" rx="0.916667" ry="0.916667" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <ellipse cx="11.6667" cy="4.58329" rx="0.916667" ry="0.916667" stroke="white" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+           </div>
+          </div>
+
+          <ul>
+            <li>
+              <div class="vp-btm-pa-list flex align-center">
+              <div class="vp-mid-itm-svg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path d="M11 2.75V11H19.25" stroke="#7367F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="11" cy="11" r="8.25" stroke="#7367F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h5>Estimated Time</h5>
+            </div>
+            <span>200 hrs</span>
+            </li>
+            <li>
+              <div class="vp-btm-pa-list flex align-center">
+              <div class="vp-mid-itm-svg green-bg" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path d="M15.3082 7.33333C14.9349 6.2742 13.9551 5.54844 12.8332 5.5H9.1665C7.64772 5.5 6.4165 6.73122 6.4165 8.25C6.4165 9.76878 7.64772 11 9.1665 11H12.8332C14.352 11 15.5832 12.2312 15.5832 13.75C15.5832 15.2688 14.352 16.5 12.8332 16.5H9.1665C8.04456 16.4516 7.06479 15.7258 6.6915 14.6667" stroke="#28C76F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M11.7498 2.75C11.7498 2.33579 11.4141 2 10.9998 2C10.5856 2 10.2498 2.33579 10.2498 2.75H11.7498ZM10.2498 5.5C10.2498 5.91421 10.5856 6.25 10.9998 6.25C11.4141 6.25 11.7498 5.91421 11.7498 5.5H10.2498ZM11.7498 16.5C11.7498 16.0858 11.4141 15.75 10.9998 15.75C10.5856 15.75 10.2498 16.0858 10.2498 16.5H11.7498ZM10.2498 19.25C10.2498 19.6642 10.5856 20 10.9998 20C11.4141 20 11.7498 19.6642 11.7498 19.25H10.2498ZM10.2498 2.75V5.5H11.7498V2.75H10.2498ZM10.2498 16.5V19.25H11.7498V16.5H10.2498Z" fill="#28C76F"/>
+                </svg>
+              </div>
+              <h5>Spent Time</h5>
+            </div>
+            <span>50 hrs</span>
+            </li>
+          </ul>
+          <div class="vp-btm-rgt-img">
+            <img src="images/chart-vp.png" alt="">
+          </div>
+
+        </div>
+      </div>
+      <div class="vp-bottom-right">
+         <div class="view-pro-top-analysis">
+              <div class="rdbr-table-top flex justify-between align-center">
+              <div class="vp-btm-analytics-lft">
+                <h4>Analytics</h4>
+                <ul>
+                  <li>Spent Time</li>
+                  <li>Estimated Time</li>
+                </ul>
+              </div>
+              <div class="vp-btm-analytics-rgt">
+                <ul class="rdbr-table-top-rgt flex">
+                  <li class="bg-gry">
+                  <select class="custom-select" name="date-rdbr-tab-1">
+                    <option>Team</option>
+                    <option value="sam">sam</option>
+                    <option value="abc"> abc</option>
+                    <option value="pop">Pop</option>
+                  </select>
+                </li>
+                <li class="bg-gry" >
+                  <select class="custom-select" name="date-rdbr-tab-2">
+                    <option>06/22/2020 - 06/22/2020</option>
+                    <option value="sam">sam</option>
+                    <option value="abc"> abc</option>
+                    <option value="pop">Pop</option>
+                  </select>
+                </li>
+                </ul>
+              </div>
+              </div>
+         </div>
+         <div class="view-pro-btm-analysis">
+          <img src="images/Chart.png" alt="">
+         </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<section class="vp-btm-tbl-wrp">
+    <div class="rd-bottom-table resource-analytics">
+            <div class="project-selection-wrp">
+              <h3>Resource Analytics</h3>
+              <form action="post">
+                  <ul class="flex">
+                      <li>
+                          <label for="Project">Resource Name </label>
+                          <input type="text" placeholder="Type here...">
+                      </li>
+                      <li>
+                          <label for="Deadline-vp-1">Deadline</label>
+  
+                          <input type="time" id="Dates" value="12:10:00" name="-Select-" min="09:00" max="18:00" placeholder="-Select-" />
+  
+                      </li>
+                  </ul>
+                  <div class="filter-btn">
+                  <a href="#" class="btn ">Filter</a>
+              </div>
+              </form>
+          </div>
+          
+            <div class="main-table-bottom">
+              <div class="table-show-num flex align-center">
+                  <label for="Show">Show</label>
+                  <select class="custom-select" name="Show">
+                      <option>10</option>
+                      <option value="20">20</option>
+                      <option value="30"> 30</option>
+                      
+                  </select>
+                  <span>Entries</span>
+              </div>
+              <div class="table-wrapper">
+                  <table>
+                    <thead>
+                      <tr>
+                        
+                        <th>Resource name</th>
+                        <th>Esteemated Hours</th>
+                        <th>Spent Hours</th>
+                        <th>Left Hours</th>
+                      </tr>
+                      
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>Raj Patel</td>
+                        <td>20 Hrs.</td>
+                        <td>10 Hrs.</td>
+                        <td>10 Hrs.</td>
+                        </tr>
+                        <tr>
+                          <td>Raj Patel</td>
+                          <td>20 Hrs.</td>
+                          <td>10 Hrs.</td>
+                          <td>10 Hrs.</td>
+                          </tr>
+                          <tr>
+                            <td>Raj Patel</td>
+                            <td>20 Hrs.</td>
+                            <td>10 Hrs.</td>
+                            <td>10 Hrs.</td>
+                            </tr>
+                            <tr>
+                              <td>Raj Patel</td>
+                              <td>20 Hrs.</td>
+                              <td>10 Hrs.</td>
+                              <td>10 Hrs.</td>
+                              </tr>
+                              <tr>
+                                <td>Raj Patel</td>
+                                <td>20 Hrs.</td>
+                                <td>10 Hrs.</td>
+                                <td>10 Hrs.</td>
+                                </tr>
+                    </tbody>
+                  </table>
+                  
+              </div>
+              <div class="table-pagination flex align-center justify-between">
+                  <div class="table-pagi-left">
+                      <span>Showing 1 to 6 of 100 entries</span>
+                  </div>
+                  <div class="table-pagi-right">
+                      <ul class="flex align-center">
+                          <li><a href="#" >Previous</a></li>
+                          <li ><a href="#" class="active">1</a></li>
+                          <li><a href="#" >2</a></li>
+                          <li><a href="#" >3</a></li>
+                          <li><a href="#" >4</a></li>
+                          <li><a href="#" >5</a></li>
+                          <li><a href="#" >Next</a></li>
+                      </ul>
+      
+                  </div>
+              </div>
+          </div>
+    </div> 
+    <div class="rd-bottom-table task-analytics">
+      <div class="project-selection-wrp">
+        <h3>Task Analytics</h3>
+        <form action="post">
+            <ul class="flex">
+                <li>
+                    <label for="Resource">Resource </label>
+                    <select class="custom-select" name="Resource">
+                        <option>-Select-</option>
+                        <option value="sam">sam</option>
+                        <option value="abc"> abc</option>
+                        <option value="pop">Pop</option>
+                        
+                    </select>
+                </li>
+                <li>
+                    <label for="Deadline-pv-2">Deadline</label>
+
+                    <input type="time" id="Dates" value="12:10:00" name="-Select-" min="09:00" max="18:00" placeholder="-Select-" />
+
+                </li>
+                <li>
+                    <label for="Milestone">Milestone</label>
+                    <select class="custom-select" name="Milestone">
+                        <option>-Select-</option>
+                        <option value="ideal">ideal</option>
+                        <option value="working"> working</option>
+                        <option value="pop">Pop</option>
+                        
+                    </select>
+                </li>
+                <li>
+                  <label for="Platform">Platform</label>
+                  <select class="custom-select" name="Platform">
+                      <option>-Select-</option>
+                      <option value="ideal">ideal</option>
+                      <option value="working"> working</option>
+                      <option value="pop">Pop</option>
+                      
+                  </select>
+              </li>
+            </ul>
+            <div class="filter-btn">
+            <a href="#" class="btn ">Filter</a>
+        </div>
+        </form>
+    </div>
+    
+      <div class="main-table-bottom">
+        <div class="table-show-num flex align-center">
+            <label for="Show">Show</label>
+            <select class="custom-select" name="Show">
+                <option>10</option>
+                <option value="20">20</option>
+                <option value="30"> 30</option>
+                
+            </select>
+            <span>Entries</span>
+        </div>
+        <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>TAsk Details</th>
+                  <th>Milestone</th>
+                  <th>PLATFORM</th>
+                  <th>Resource name</th>
+                  <th>Esteemated Hours</th>
+                  <th>Spent Hours</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                  <td>master_setting in adm...</td>
+                  <td>M2</td>
+                  <td>Application</td>
+                  <td>Siddhesh</td>
+                  <td>20 Hrs.</td>
+                  <td>10 Hrs.</td>
+                  
+                  <td>
+                  <span class="status-btn completed">
+                    Completed
+                  </span>
+                  </td>
+                  </tr>
+                  <tr>
+                    <td>master_setting in adm...</td>
+                    <td>M2</td>
+                    <td>Application</td>
+                    <td>Siddhesh</td>
+                    <td>20 Hrs.</td>
+                    <td>10 Hrs.</td>
+                    
+                    <td>
+                    <span class="status-btn nProgress  Pending">
+                      InProgress
+                    </span>
+                    </td>
+                    </tr>
+                    <tr>
+                      <td>master_setting in adm...</td>
+                      <td>M2</td>
+                      <td>Application</td>
+                      <td>Siddhesh</td>
+                      <td>20 Hrs.</td>
+                      <td>10 Hrs.</td>
+                      
+                      <td>
+                      <span class="status-btn nProgress  complete-blue">
+                        Assigned
+                      </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>master_setting in adm...</td>
+                      <td>M2</td>
+                      <td>Application</td>
+                      <td>Siddhesh</td>
+                      <td>20 Hrs.</td>
+                      <td>10 Hrs.</td>
+                      
+                      <td>
+                      <span class="status-btn Disapproved">
+                        Hold
+                      </span>
+                      </td>
+                    </tr>
+              </tbody>
+            </table>
+        </div>
+        <div class="table-pagination flex align-center justify-between">
+            <div class="table-pagi-left">
+                <span>Showing 1 to 6 of 100 entries</span>
+            </div>
+            <div class="table-pagi-right">
+                <ul class="flex align-center">
+                    <li><a href="#" >Previous</a></li>
+                    <li ><a href="#" class="active">1</a></li>
+                    <li><a href="#" >2</a></li>
+                    <li><a href="#" >3</a></li>
+                    <li><a href="#" >4</a></li>
+                    <li><a href="#" >5</a></li>
+                    <li><a href="#" >Next</a></li>
+                </ul>
+
+            </div>
+        </div>
+        <a href="#" class="edit-profile btn"> Edit Project</a>
+    </div>
+</div> 
+</section>
+</div>
+</div>
+</div>
+</div>
+    <script>
+      includeHTML();
+    </script>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>

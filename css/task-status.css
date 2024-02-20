@@ -1,0 +1,40 @@
+.corn-swatch {
+    width: 30px;
+    height: 18px;
+    border-radius: 10px;
+    background-color: #28c76f;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+.checkbox-swatch input {
+    display: none;
+}
+.corn-swatch::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 3px;
+    background-color: var(--white);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.checkbox-swatch input:checked + .corn-swatch, .checkbox-swatch input:focus + label .corn-swatch {
+    background-color: var(--white);
+    border:1px solid var(--gray-7c);
+}
+.checkbox-swatch input:checked + .corn-swatch::before,
+.checkbox-swatch input:focus + label .corn-swatch::before {
+  left: 3px;
+  right: auto;
+  background-color: var(--gray-7c);
+}
+.task-status .table-wrapper table tbody td ,
+.task-status .table-wrapper table th{
+    font-weight: 500;
+}
+.task-status .table-wrapper table  th {
+    width: 35%;
+}

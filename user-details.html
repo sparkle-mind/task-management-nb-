@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user-details</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/user-details.css">
+    <!-- ======= OPEN SENS ========== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ========= COMPONENTS JS ========= -->
+<script>
+  function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /*loop through a collection of all HTML elements:*/
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          /*search for elements with a certain atrribute:*/
+          file = elmnt.getAttribute("w3-include-html");
+          if (file) {
+              /*make an HTTP request using the attribute value as the file name:*/
+              xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function () {
+                  if (this.readyState == 4) {
+                      if (this.status == 200) {
+                          elmnt.innerHTML = this.responseText;
+                          executeScripts(elmnt);
+                      }
+                      if (this.status == 404) {
+                          elmnt.innerHTML = "Page not found.";
+                      }
+                      /*remove the attribute, and call this function once more:*/
+                      elmnt.removeAttribute("w3-include-html");
+                      includeHTML();
+                  }
+              }
+              console.log("object", xhttp);
+              xhttp.open("GET", file, true);
+              xhttp.send();
+              /*exit the function:*/
+              return;
+          }
+      }
+  };
+
+  function executeScripts(container) {
+      var scripts = container.getElementsByTagName('script');
+      for (var i = 0; i < scripts.length; i++) {
+          var script = document.createElement('script');
+          script.text = scripts[i].text;
+          container.appendChild(script).parentNode.removeChild(script);
+      }
+  }
+</script>
+<!-- ========= COMPONENTS JS ========= -->
+
+<main class="main-wrp">
+<div class="overlay"></div>
+<div class="main-wrp-inner flex justify-between">
+<!-- ========== aside menu start ============ -->
+<aside id="aside-menu" w3-include-html="/Componets/Comman/aside.html"></aside>
+<!-- ========== aside menu end ============ -->
+<div id="right-content">
+    <!-- ========== header start ============ -->
+    <div w3-include-html="/Componets/Comman/header.html"></div>
+    <!-- ========== header end ============ -->
+    <div class="main-table-content planning resource-details">
+        <div class="container">
+        <div class="main-table-content-inner">
+            <div class="main-table-cont-top">
+            <div class="table-content-title flex justify-between align-end">
+                <div class="table-content-title-left">
+                  <h1>User details</h1>
+                  <ul class="table-breadcrumbs flex align-center">
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li class="active"><a href="#">Resources details</a></li>
+                  </ul>
+                </div>
+            </div>
+          
+            </div>
+            <div class="resource-details-bottom">
+              <div class="resource-details-bottom-row flex">
+                <div class="resource-details-bottom-left">
+                  <div class="resource-profile-row flex justify-between align-end">
+                    <div class="resource-profile-lft flex align-end">
+                      <div class="resource-profile-img">
+                        <img src="images/resouce-profile.png" alt="resouce-profile">
+                      </div>
+                      <div class="resource-pro-name">
+                        <h2>Belle Ferguson</h2>
+                        <ul class="flex icn-with-text-list">
+                          <li>
+                            <div class="resource-list-icn">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M15.833 2.5H12.4997C11.5792 2.5 10.833 3.24619 10.833 4.16667V14.1667C10.833 16.0076 12.3254 17.5 14.1663 17.5C16.0073 17.5 17.4997 16.0076 17.4997 14.1667V4.16667C17.4997 3.24619 16.7535 2.5 15.833 2.5" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M15.833 2.5H12.4997C11.5792 2.5 10.833 3.24619 10.833 4.16667V14.1667C10.833 16.0076 12.3254 17.5 14.1663 17.5C16.0073 17.5 17.4997 16.0076 17.4997 14.1667V4.16667C17.4997 3.24619 16.7535 2.5 15.833 2.5" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10.8338 6.12498L9.16713 4.45831C8.5163 3.80768 7.4613 3.80768 6.81046 4.45831L4.4538 6.81498C3.80316 7.46581 3.80316 8.52081 4.4538 9.17165L11.9538 16.6716" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10.8338 6.12498L9.16713 4.45831C8.5163 3.80768 7.4613 3.80768 6.81046 4.45831L4.4538 6.81498C3.80316 7.46581 3.80316 8.52081 4.4538 9.17165L11.9538 16.6716" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6.08333 10.8334H4.16667C3.24619 10.8334 2.5 11.5796 2.5 12.5V15.8334C2.5 16.7538 3.24619 17.5 4.16667 17.5H14.1667" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6.08333 10.8334H4.16667C3.24619 10.8334 2.5 11.5796 2.5 12.5V15.8334C2.5 16.7538 3.24619 17.5 4.16667 17.5H14.1667" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14.1667 14.1667V14.175" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14.1667 14.1667V14.175" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            </div>
+                            UI/UX Designer
+                          </li>
+                          <!-- <li>
+                            <div class="resource-list-icn">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <rect x="3.33301" y="4.16663" width="13.3333" height="13.3333" rx="2" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <rect x="3.33301" y="4.16663" width="13.3333" height="13.3333" rx="2" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M13.3337 2.5V5.83333" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M13.3337 2.5V5.83333" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6.66667 2.5V5.83333" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6.66667 2.5V5.83333" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M3.33301 9.16667H16.6663" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M3.33301 9.16667H16.6663" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9.16699 12.5H10.0003" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9.16699 12.5H10.0003" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9.99967 12.5V15" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9.99967 12.5V15" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            </div>
+                            Joined April 2021
+                          </li> -->
+                        </ul>
+                        <div class="resource-profile-rgt">
+                          <select class="custom-select" name="Active">
+                            <option>Active</option>
+                            <option value="ideal">ideal</option>
+                            <option value="working"> working</option>
+                            <option value="pop">Pop</option>
+                        </select>
+                        </div>
+                      </div>
+                    </div>
+                    
+                   </div>
+
+                  <div class="resource-details-bottom-left-top">
+                  <div class="rdblt-inner">
+                    <div class="rd-list-itm">
+                      <div class="rd-list-itm-title">
+                        <h3>ABOUT</h3>
+                      </div>
+                      <ul class="icn-with-text-list">
+                      <li>
+                          <div class="resource-list-icn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <ellipse cx="10.0003" cy="5.83333" rx="3.33333" ry="3.33333" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <ellipse cx="10.0003" cy="5.83333" rx="3.33333" ry="3.33333" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M5 17.5V15.8333C5 13.9924 6.49238 12.5 8.33333 12.5H11.6667C13.5076 12.5 15 13.9924 15 15.8333V17.5" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M5 17.5V15.8333C5 13.9924 6.49238 12.5 8.33333 12.5H11.6667C13.5076 12.5 15 13.9924 15 15.8333V17.5" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        Role:  Resource
+                      </li>
+                      <li>
+                        <div class="resource-list-icn">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M15.834 2.5H12.5007C11.5802 2.5 10.834 3.24619 10.834 4.16667V14.1667C10.834 16.0076 12.3264 17.5 14.1673 17.5C16.0083 17.5 17.5007 16.0076 17.5007 14.1667V4.16667C17.5007 3.24619 16.7545 2.5 15.834 2.5" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15.834 2.5H12.5007C11.5802 2.5 10.834 3.24619 10.834 4.16667V14.1667C10.834 16.0076 12.3264 17.5 14.1673 17.5C16.0083 17.5 17.5007 16.0076 17.5007 14.1667V4.16667C17.5007 3.24619 16.7545 2.5 15.834 2.5" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10.8328 6.12498L9.16615 4.45831C8.51532 3.80768 7.46032 3.80768 6.80949 4.45831L4.45282 6.81498C3.80218 7.46581 3.80218 8.52081 4.45282 9.17165L11.9528 16.6716" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10.8328 6.12498L9.16615 4.45831C8.51532 3.80768 7.46032 3.80768 6.80949 4.45831L4.45282 6.81498C3.80218 7.46581 3.80218 8.52081 4.45282 9.17165L11.9528 16.6716" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6.08333 10.8334H4.16667C3.24619 10.8334 2.5 11.5796 2.5 12.5V15.8334C2.5 16.7538 3.24619 17.5 4.16667 17.5H14.1667" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6.08333 10.8334H4.16667C3.24619 10.8334 2.5 11.5796 2.5 12.5V15.8334C2.5 16.7538 3.24619 17.5 4.16667 17.5H14.1667" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.1667 14.1667V14.175" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.1667 14.1667V14.175" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                      </div>
+                      Position:  Junior
+                      </li>
+                      <li>
+                        <div class="resource-list-icn">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M18.3327 7.49996L9.99935 4.16663L1.66602 7.49996L9.99935 10.8333L18.3327 7.49996V12.5" stroke="#4B465C" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18.3327 7.49996L9.99935 4.16663L1.66602 7.49996L9.99935 10.8333L18.3327 7.49996V12.5" stroke="white" stroke-opacity="0.2" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M5 8.83325V13.3333C5 14.714 7.23858 15.8333 10 15.8333C12.7614 15.8333 15 14.714 15 13.3333V8.83325" stroke="#4B465C" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M5 8.83325V13.3333C5 14.714 7.23858 15.8333 10 15.8333C12.7614 15.8333 15 14.714 15 13.3333V8.83325" stroke="white" stroke-opacity="0.2" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                      </div>
+                      Designation:  UI/UX Designer
+                      </li>
+                      <li>
+                        <div class="resource-list-icn">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <rect x="3.33398" y="4.16663" width="13.3333" height="13.3333" rx="2" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="3.33398" y="4.16663" width="13.3333" height="13.3333" rx="2" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13.3327 2.5V5.83333" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13.3327 2.5V5.83333" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6.66667 2.5V5.83333" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6.66667 2.5V5.83333" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.33398 9.16667H16.6673" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.33398 9.16667H16.6673" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9.16602 12.5H9.99935" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9.16602 12.5H9.99935" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10.0007 12.5V15" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10.0007 12.5V15" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                      </div>
+                      Joining Date:  12/12/2022
+                      </li>
+                      <li>
+                        <div class="resource-list-icn">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <rect x="2.5" y="3.33337" width="15" height="10" rx="0.833333" stroke="#4B465C" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="2.5" y="3.33337" width="15" height="10" rx="0.833333" stroke="white" stroke-opacity="0.2" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M5.83398 16.6667H14.1673" stroke="#4B465C" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M5.83398 16.6667H14.1673" stroke="white" stroke-opacity="0.2" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M7.50065 13.3334V16.6667" stroke="#4B465C" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M7.50065 13.3334V16.6667" stroke="white" stroke-opacity="0.2" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12.5007 13.3334V16.6667" stroke="#4B465C" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12.5007 13.3334V16.6667" stroke="white" stroke-opacity="0.2" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                      </div>
+                      Work Space:  WFO
+                      </li>
+                      </ul>
+                    </div>
+                    <div class="rd-list-itm">
+                      <div class="rd-list-itm-title">
+                        <h3>CONTACTS</h3>
+                      </div>
+                      <ul class="icn-with-text-list">
+                      <li>
+                          <div class="resource-list-icn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M4.16667 3.33337H7.5L9.16667 7.50004L7.08333 8.75004C7.9758 10.5596 9.44039 12.0242 11.25 12.9167L12.5 10.8334L16.6667 12.5V15.8334C16.6667 16.7538 15.9205 17.5 15 17.5C8.27304 17.0912 2.9088 11.727 2.5 5.00004C2.5 4.07957 3.24619 3.33337 4.16667 3.33337" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M4.16667 3.33337H7.5L9.16667 7.50004L7.08333 8.75004C7.9758 10.5596 9.44039 12.0242 11.25 12.9167L12.5 10.8334L16.6667 12.5V15.8334C16.6667 16.7538 15.9205 17.5 15 17.5C8.27304 17.0912 2.9088 11.727 2.5 5.00004C2.5 4.07957 3.24619 3.33337 4.16667 3.33337" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M12.5 5.83337C13.4205 5.83337 14.1667 6.57957 14.1667 7.50004" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M12.5 5.83337C13.4205 5.83337 14.1667 6.57957 14.1667 7.50004" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M12.5 2.5C15.2614 2.5 17.5 4.73858 17.5 7.5" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M12.5 2.5C15.2614 2.5 17.5 4.73858 17.5 7.5" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        Contact:  (123) 456-7890
+                      </li>
+                      <li>
+                        <div class="resource-list-icn">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99965 2.50003C12.3805 2.49951 14.6202 3.62947 16.0346 5.54473C17.4489 7.46 17.8699 9.93303 17.1688 12.2084C17.8106 13.6299 17.5055 15.3002 16.4026 16.403C15.2998 17.5058 13.6295 17.8109 12.208 17.1692C9.55152 17.9886 6.65971 17.2715 4.69396 15.3057C2.72822 13.34 2.01105 10.4482 2.83049 7.7917C2.18819 6.37012 2.49303 4.69938 3.59599 3.59624C4.69895 2.4931 6.36963 2.18797 7.79132 2.83003C8.5068 2.6103 9.25119 2.49906 9.99965 2.50003Z" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99965 2.50003C12.3805 2.49951 14.6202 3.62947 16.0346 5.54473C17.4489 7.46 17.8699 9.93303 17.1688 12.2084C17.8106 13.6299 17.5055 15.3002 16.4026 16.403C15.2998 17.5058 13.6295 17.8109 12.208 17.1692C9.55152 17.9886 6.65971 17.2715 4.69396 15.3057C2.72822 13.34 2.01105 10.4482 2.83049 7.7917C2.18819 6.37012 2.49303 4.69938 3.59599 3.59624C4.69895 2.4931 6.36963 2.18797 7.79132 2.83003C8.5068 2.6103 9.25119 2.49906 9.99965 2.50003Z" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6.66699 12.0834C7.08366 13.75 8.63199 14.1667 10.0003 14.1667C12.4212 14.1667 13.3337 13.1775 13.3337 12.0834C13.3337 10.8309 11.7278 10 10.0003 10C8.27283 10 6.66699 9.16921 6.66699 7.91671C6.66699 6.82254 7.57949 5.83337 10.0003 5.83337C11.3687 5.83337 12.917 6.25004 13.3337 7.91671" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6.66699 12.0834C7.08366 13.75 8.63199 14.1667 10.0003 14.1667C12.4212 14.1667 13.3337 13.1775 13.3337 12.0834C13.3337 10.8309 11.7278 10 10.0003 10C8.27283 10 6.66699 9.16921 6.66699 7.91671C6.66699 6.82254 7.57949 5.83337 10.0003 5.83337C11.3687 5.83337 12.917 6.25004 13.3337 7.91671" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                      </div>
+                      Skype:  john.doe
+                      </li>
+                      <li>
+                        <div class="resource-list-icn">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <rect x="2.5" y="4.16663" width="15" height="11.6667" rx="2" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="2.5" y="4.16663" width="15" height="11.6667" rx="2" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2.5 5.83337L10 10.8334L17.5 5.83337" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2.5 5.83337L10 10.8334L17.5 5.83337" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                      </div>
+                      Email:  john.doe@gmail.com
+                      </li>
+                      </ul>
+                    </div>
+                    <div class="rd-list-itm">
+                      <div class="rd-list-itm-title">
+                        <h3>TEAMS</h3>
+                      </div>
+                      <ul class="icn-with-text-list">
+                      <li>
+                          <!-- <div class="resource-list-icn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M4.52366 14.3708L9.58699 17.2633C9.84313 17.4096 10.1575 17.4096 10.4137 17.2633L15.477 14.3708C15.7022 14.2422 15.8547 14.0161 15.8895 13.7591L16.992 5.67246C17.0454 5.28088 16.8163 4.90567 16.4437 4.77413L10.277 2.59746C10.0977 2.53424 9.90214 2.53424 9.72283 2.59746L3.55699 4.77496C3.18432 4.9065 2.9553 5.28171 3.00866 5.6733L4.11116 13.76C4.146 14.0169 4.29848 14.243 4.52366 14.3716V14.3708Z" stroke="#EA5455" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M7.5 12.5L10 5.83337L12.5 12.5" stroke="#EA5455" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M8.33301 10.8333H11.6663" stroke="#EA5455" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div> -->
+                        Backend Developer:  (126 Members)
+                      </li>
+                      </ul>
+                    </div>
+                    <div class="rd-list-itm">
+                      <div class="rd-list-itm-title">
+                        <h3>Projects</h3>
+                      </div>
+                      <ul class="icn-with-text-list">
+                      <li>
+                        SMR
+                      </li>
+                      <li>
+                        PMS
+                      </li>
+                      <li>
+                        Greenshine
+                      </li>
+                      </ul>
+                    </div>
+                    </div>
+                  </div>
+               
+                </div>
+                <div class="resource-details-bottom-rgt">
+                  <div class="rdbr-item">
+                    <div class="rdbr-item-top flex justify-between align-center">
+                      <h5>All Project Statistics</h5>
+                      <select class="custom-select" name="date-rdbr">
+                        <option>06/22/2020 - 06/22/2020</option>
+                        <option value="sam">sam</option>
+                        <option value="abc"> abc</option>
+                        <option value="pop">Pop</option>
+                    </select>
+                    </div>
+                    <div class="rdbr-item-bottom">
+                      <ul class="flex justify-between">
+                        <li>
+                          <div class="rdbr-icn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                              <path d="M12 3.5V12.5H21" stroke="#7367F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <circle cx="12" cy="12.5" r="9" stroke="#7367F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                          </div>
+                          <div class="rdbr-list-cont">
+                            <h5>40 Hrs</h5>
+                            <p>Total Expected Hours</p>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="rdbr-icn green">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                              <path d="M12 3.5V12.5H21" stroke="#28C76F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <circle cx="12" cy="12.5" r="9" stroke="#28C76F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                          </div>
+                          <div class="rdbr-list-cont">
+                            <h5>30 Hrs</h5>
+                            <p>Total Spent Hours</p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="rdbr-item project-wise-statistics">
+                    <div class="rdbr-item-top flex justify-between align-center">
+                      <h5>Project-wise Statistics</h5>
+                      <select class="custom-select" name="date-rdbr">
+                        <option>Search Project</option>
+                        <option value="sam">sam</option>
+                        <option value="abc"> abc</option>
+                        <option value="pop">Pop</option>
+                    </select>
+                    </div>
+                    <div class="rdbr-item-bottom">
+                      <ul class="flex justify-between">
+                        <li>
+                          <div class="rdbr-icn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                              <path d="M12 3.5V12.5H21" stroke="#7367F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <circle cx="12" cy="12.5" r="9" stroke="#7367F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                          </div>
+                          <div class="rdbr-list-cont">
+                            <h5>240 Hrs</h5>
+                            <p>Total Expected Hours</p>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="rdbr-icn green">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                              <path d="M12 3.5V12.5H21" stroke="#28C76F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <circle cx="12" cy="12.5" r="9" stroke="#28C76F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                          </div>
+                          <div class="rdbr-list-cont">
+                            <h5>260 Hrs</h5>
+                            <p>Total Spent Hours</p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="rdbr-table-project">
+                    <div class="rdbr-table-top flex justify-between align-center">
+                      <h4>Projects</h4>
+                      <ul class="rdbr-table-top-rgt flex">
+                        <li>
+                        <select class="custom-select" name="date-rdbr-tab-1">
+                          <option>Search Project</option>
+                          <option value="sam">sam</option>
+                          <option value="abc"> abc</option>
+                          <option value="pop">Pop</option>
+                       </select>
+                      </li>
+                      <li class="bg-gry" >
+                        <select class="custom-select" name="date-rdbr-tab-2">
+                          <option>06/22/2020 - 06/22/2020</option>
+                          <option value="sam">sam</option>
+                          <option value="abc"> abc</option>
+                          <option value="pop">Pop</option>
+                       </select>
+                      </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="table-wrapper rdbr-table">
+                   
+                    <table>
+                      <thead>
+                        <tr>
+                          
+                          <th> Name</th>
+                          <th> Expected Hours</th>
+                          <th>Spent Hours</th>
+                          <th>Left Hours</th>
+                        </tr>
+                        
+                      </thead>
+                      <tbody>
+                          <tr>
+                          <td>SMR</td>
+                          <td>50 Hrs</td>
+                          <td>50 Hrs</td>
+                          <td>50 Hrs</td>
+                          </tr>
+                          
+                          <tr>
+                            <td>Greenshine</td>
+                            <td>50 Hrs</td>
+                            <td>50 Hrs</td>
+                            <td>50 Hrs</td>
+                            </tr>
+                      </tbody>
+                    </table>
+                </div>
+               </div>
+               
+
+            </div>
+            </div>  
+            <div class="rd-bottom-table">
+              <div class="project-selection-wrp">
+                <h3>Task Analytics</h3>
+                <form action="post">
+                    <ul class="flex">
+                        <li>
+                            <label for="Project">Project </label>
+                            <select class="custom-select" name="Project">
+                                <option>-Select-</option>
+                                <option value="sam">sam</option>
+                                <option value="abc"> abc</option>
+                                <option value="pop">Pop</option>
+                               
+                            </select>
+                        </li>
+                        <li>
+                            <label for="Dates">Date Range</label>
+    
+                            <input type="time" id="Dates" value="12:10:00" name="-Select-" min="09:00" max="18:00" placeholder="-Select-" />
+    
+                        </li>
+                        <li>
+                            <label for="Milestone">Milestone</label>
+                            <select class="custom-select" name="Milestone">
+                                <option>-Select-</option>
+                                <option value="ideal">ideal</option>
+                                <option value="working"> working</option>
+                                <option value="pop">Pop</option>
+                               
+                            </select>
+                        </li>
+                        <li>
+                          <label for="Platform">Platform</label>
+                          <select class="custom-select" name="Platform">
+                              <option>-Select-</option>
+                              <option value="ideal">ideal</option>
+                              <option value="working"> working</option>
+                              <option value="pop">Pop</option>
+                             
+                          </select>
+                      </li>
+                    </ul>
+                    <div class="filter-btn">
+                    <a href="#" class="btn ">Filter</a>
+                </div>
+                </form>
+            </div>
+            
+              <div class="main-table-bottom">
+                <div class="table-show-num flex align-center">
+                    <label for="Show">Show</label>
+                    <select class="custom-select" name="Show">
+                        <option>10</option>
+                        <option value="20">20</option>
+                        <option value="30"> 30</option>
+                       
+                    </select>
+                    <span>Entries</span>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                      <thead>
+                        <tr>
+                          
+                          <th>Project name</th>
+                          <th>Milestone</th>
+                          <th>PLATFORM</th>
+                          <th>TAsk Details</th>
+                          <th>Esteemated Hours</th>
+                          <th>Spent Hours</th>
+                          <th>Status</th>
+                        </tr>
+                        
+                      </thead>
+                      <tbody>
+                          <tr>
+                          <td>SMR</td>
+                          <td>M2</td>
+                          <td>Application</td>
+                          <td>master_setting in adm...</td>
+                          <td>20 Hrs.</td>
+                          <td>10 Hrs.</td>
+                         
+                          <td>
+                          <span class="status-btn completed">
+                            Completed
+                         </span>
+                         </td>
+                          </tr>
+                          <tr>
+                            <td>SMR</td>
+                            <td>M2</td>
+                            <td>Application</td>
+                            <td>master_setting in adm...</td>
+                            <td>20 Hrs.</td>
+                            <td>10 Hrs.</td>
+                            <td>
+                            <span class="status-btn InProgress  Pending">
+                              InProgress
+                           </span>
+                           </td>
+                            </tr>
+                            <tr>
+                              <td>SMR</td>
+                              <td>M2</td>
+                              <td>Application</td>
+                              <td>master_setting in adm...</td>
+                              <td>20 Hrs.</td>
+                              <td>10 Hrs.</td>
+                              <td>
+                              <span class="status-btn complete-blue">
+                                completed
+                             </span>
+                             </td>
+                              </tr>
+                      </tbody>
+                    </table>
+                    
+                </div>
+                <div class="table-pagination flex align-center justify-between">
+                    <div class="table-pagi-left">
+                        <span>Showing 1 to 6 of 100 entries</span>
+                    </div>
+                    <div class="table-pagi-right">
+                        <ul class="flex align-center">
+                            <li><a href="#" >Previous</a></li>
+                            <li ><a href="#" class="active">1</a></li>
+                            <li><a href="#" >2</a></li>
+                            <li><a href="#" >3</a></li>
+                            <li><a href="#" >4</a></li>
+                            <li><a href="#" >5</a></li>
+                            <li><a href="#" >Next</a></li>
+                        </ul>
+        
+                    </div>
+                </div>
+                <a href="#" class="edit-profile btn">Edit Profile</a>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</main>
+<script>
+  includeHTML();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>

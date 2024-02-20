@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add-User</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/planning.css">
+    <link rel="stylesheet" href="css/add-resource.css">
+    <!-- ======= OPEN SENS ========== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ========= COMPONENTS JS ========= -->
+<script>
+  function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /*loop through a collection of all HTML elements:*/
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          /*search for elements with a certain atrribute:*/
+          file = elmnt.getAttribute("w3-include-html");
+          if (file) {
+              /*make an HTTP request using the attribute value as the file name:*/
+              xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function () {
+                  if (this.readyState == 4) {
+                      if (this.status == 200) {
+                          elmnt.innerHTML = this.responseText;
+                          executeScripts(elmnt);
+                      }
+                      if (this.status == 404) {
+                          elmnt.innerHTML = "Page not found.";
+                      }
+                      /*remove the attribute, and call this function once more:*/
+                      elmnt.removeAttribute("w3-include-html");
+                      includeHTML();
+                  }
+              }
+              console.log("object", xhttp);
+              xhttp.open("GET", file, true);
+              xhttp.send();
+              /*exit the function:*/
+              return;
+          }
+      }
+  };
+
+  function executeScripts(container) {
+      var scripts = container.getElementsByTagName('script');
+      for (var i = 0; i < scripts.length; i++) {
+          var script = document.createElement('script');
+          script.text = scripts[i].text;
+          container.appendChild(script).parentNode.removeChild(script);
+      }
+  }
+</script>
+<!-- ========= COMPONENTS JS ========= -->
+
+<main class="main-wrp">
+<div class="overlay"></div>
+<div class="main-wrp-inner flex justify-between">
+<!-- ========== aside menu start ============ -->
+<aside id="aside-menu">
+    <div class="aside-wrp">
+    <div class="aside-top flex align-center justify-between">
+        <a href="#" class="logo">
+            <img src="images/LOGO.svg" alt="logo">
+        </a>
+        <div class="close-menu"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M10.5 3.5L3.5 10.5" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M10.5 3.5L3.5 10.5" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M3.5 3.5L10.5 10.5" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M3.5 3.5L10.5 10.5" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg></div>
+    </div>
+    <ul class="aside-menu">
+        <li><a href="#" class="gray-bg">Dashboard</a></li>
+        <li><a href="projects.html" >Projects</a></li>
+        <li><a href="#">Planning</a></li>
+        <li><a href="#" class="active">Resources</a></li>
+        <li><a href="#">Performance</a></li>
+        <li><a href="#">Task Management</a></li>
+    </ul>
+
+</div>
+</aside>
+<!-- ========== aside menu end ============ -->
+<div id="right-content">
+   <!-- ========== header start ============ -->
+   <div w3-include-html="/Componets/Comman/header.html"></div>
+   <!-- ========== header end ============ -->
+    <div class="main-table-content planning  add-resource">
+        <div class="container">
+        <div class="main-table-content-inner">
+            <div class="main-table-cont-top">
+            <div class="table-content-title flex justify-between align-end">
+                <div class="table-content-title-left">
+                  <h1>Add New User</h1>
+                  <ul class="table-breadcrumbs flex align-center">
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li class="active"><a href="#">Add New Resources</a></li>
+                  </ul>
+                </div>
+                
+            </div>
+            <div class="file-upload-wrp">
+              <input type="file">
+            </div>
+            <div class="project-selection-wrp">
+                <form action="post">
+                    <ul class="flex">
+                        <li>
+                            <label for="Full-Name">Full Name</label>
+                            <input type="text" placeholder="Type here...">
+                        </li>
+                        <li>
+                            <label for="Role">Role</label>
+                            <select class="custom-select" name="Role">
+                                <option>-Select-</option>
+                                <option value="ideal">ideal</option>
+                                <option value="working"> working</option>
+                                <option value="pop">Pop</option>
+                              
+                            </select>
+                        </li>
+                        <li>
+                          <label for="Position">Position</label>
+                          <select class="custom-select" name="Position">
+                              <option>-Select-</option>
+                              <option value="ideal">ideal</option>
+                              <option value="working"> working</option>
+                              <option value="pop">Pop</option>
+                            
+                          </select>
+                      </li>
+                    <li>
+                        <label for="Designation">Designation</label>
+                        <select class="custom-select" name="Designation">
+                            <option>-Select-</option>
+                            <option value="ideal">ideal</option>
+                            <option value="working"> working</option>
+                            <option value="pop">Pop</option>
+                          
+                        </select>
+                    </li>
+                    <li>
+                      <label for="WorkSpace">WorkSpace</label>
+                      <select class="custom-select" name="WorkSpace">
+                          <option>-Select-</option>
+                          <option value="ideal">ideal</option>
+                          <option value="working"> working</option>
+                          <option value="pop">Pop</option>
+                        
+                      </select>
+                  </li>
+                  <li>
+                    <label for="Dates">Joining date</label>
+
+                    <input type="time" id="Dates" value="12:10:00" name="-Select-" min="09:00" max="18:00" placeholder="-Select-">
+
+                </li>
+                      <li>
+                        <label for="Contact ">Skype Contact  </label>
+                        <input type="number" placeholder="Type here...">
+                    </li>
+                    <li>
+                      <label for="Email ">Company Email </label>
+                      <input type="email" placeholder="Type here...">
+                  </li>
+                  <li>
+                    <label for="Contact-Number">Contact Number </label>
+                    <input type="number" placeholder="Type here...">
+                </li>
+                   </ul>
+                  <!-- <div class="editor-wrp">
+                    <h4>Address</h4>
+                    <div class="editor-inner">
+                      <div class="editor-top">
+                        <ul class="flex align-center">
+                          <li>
+                            <div class="editor-icn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M5.83301 4.16675L10.833 4.16675C12.4438 4.16675 13.7497 5.47258 13.7497 7.08341C13.7497 8.69425 12.4438 10.0001 10.833 10.0001H5.83301L5.83301 4.16675Z" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M5.83301 4.16675L10.833 4.16675C12.4438 4.16675 13.7497 5.47258 13.7497 7.08341C13.7497 8.69425 12.4438 10.0001 10.833 10.0001H5.83301L5.83301 4.16675Z" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M10.833 10H11.6663C13.2772 10 14.583 11.3058 14.583 12.9167C14.583 14.5275 13.2772 15.8333 11.6663 15.8333H5.83301L5.83301 10" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M10.833 10H11.6663C13.2772 10 14.583 11.3058 14.583 12.9167C14.583 14.5275 13.2772 15.8333 11.6663 15.8333H5.83301L5.83301 10" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg></div>
+                          </li>
+                          <li>
+                            <div class="editor-icn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M9.16699 4.16667L14.167 4.16667" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M9.16699 4.16667L14.167 4.16667" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M5.83301 15.8334H10.833" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M5.83301 15.8334H10.833" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M11.6663 4.16675L8.33301 15.8334" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M11.6663 4.16675L8.33301 15.8334" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg></div>
+                          </li>
+                          <li>
+                            <div class="editor-icn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M5.83301 4.16675L5.83301 8.33341C5.83301 10.6346 7.69849 12.5001 9.99967 12.5001C12.3009 12.5001 14.1663 10.6346 14.1663 8.33341V4.16675" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M5.83301 4.16675L5.83301 8.33341C5.83301 10.6346 7.69849 12.5001 9.99967 12.5001C12.3009 12.5001 14.1663 10.6346 14.1663 8.33341V4.16675" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M4.16699 15.8334L15.8337 15.8334" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M4.16699 15.8334L15.8337 15.8334" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg></div>
+                          </li>
+                          <li>
+                            <div class="editor-icn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M9.16699 4.99992L16.667 4.99992" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M9.16699 4.99992L16.667 4.99992" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M9.16699 9.99992L16.667 9.99992" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M9.16699 9.99992L16.667 9.99992" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M10 14.9999H16.6667" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M10 14.9999H16.6667" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M3.33301 13.3334C3.33301 12.4129 4.0792 11.6667 4.99967 11.6667C5.92015 11.6667 6.66634 12.4129 6.66634 13.3334C6.66634 13.8259 6.24967 14.1667 5.83301 14.5834L3.33301 16.6667H6.66634" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M3.33301 13.3334C3.33301 12.4129 4.0792 11.6667 4.99967 11.6667C5.92015 11.6667 6.66634 12.4129 6.66634 13.3334C6.66634 13.8259 6.24967 14.1667 5.83301 14.5834L3.33301 16.6667H6.66634" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M4.99967 8.33325L4.99967 3.33325L3.33301 4.99992" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M4.99967 8.33325L4.99967 3.33325L3.33301 4.99992" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg></div>
+                          </li>
+                          <li>
+                            <div class="editor-icn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M2.91699 4.58333L4.16699 5.83333L6.25033 3.75" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M2.91699 4.58333L4.16699 5.83333L6.25033 3.75" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M2.91699 9.58333L4.16699 10.8333L6.25033 8.75" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M2.91699 9.58333L4.16699 10.8333L6.25033 8.75" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M2.91699 14.5833L4.16699 15.8333L6.25033 13.75" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M2.91699 14.5833L4.16699 15.8333L6.25033 13.75" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M9.16699 4.99992L16.667 4.99992" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M9.16699 4.99992L16.667 4.99992" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M9.16699 9.99992L16.667 9.99992" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M9.16699 9.99992L16.667 9.99992" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M9.16699 14.9999L16.667 14.9999" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M9.16699 14.9999L16.667 14.9999" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg></div>
+                          </li>
+                          <li>
+                            <div class="editor-icn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M8.33301 11.6667C8.8816 12.2266 9.63247 12.5421 10.4163 12.5421C11.2002 12.5421 11.9511 12.2266 12.4997 11.6667L15.833 8.33332C16.9836 7.18273 16.9836 5.31725 15.833 4.16666C14.6824 3.01606 12.8169 3.01606 11.6663 4.16666L11.2497 4.58332" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M8.33301 11.6667C8.8816 12.2266 9.63247 12.5421 10.4163 12.5421C11.2002 12.5421 11.9511 12.2266 12.4997 11.6667L15.833 8.33332C16.9836 7.18273 16.9836 5.31725 15.833 4.16666C14.6824 3.01606 12.8169 3.01606 11.6663 4.16666L11.2497 4.58332" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M11.6667 8.33343C11.1181 7.77353 10.3672 7.45801 9.58332 7.45801C8.79946 7.45801 8.04858 7.77353 7.49999 8.33343L4.16666 11.6668C3.01606 12.8174 3.01606 14.6828 4.16666 15.8334C5.31725 16.984 7.18273 16.984 8.33332 15.8334L8.74999 15.4168" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M11.6667 8.33343C11.1181 7.77353 10.3672 7.45801 9.58332 7.45801C8.79946 7.45801 8.04858 7.77353 7.49999 8.33343L4.16666 11.6668C3.01606 12.8174 3.01606 14.6828 4.16666 15.8334C5.31725 16.984 7.18273 16.984 8.33332 15.8334L8.74999 15.4168" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg></div>
+                          </li>
+                          <li>
+                            <div class="editor-icn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <path d="M12.5004 6.66667H12.5087" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M12.5004 6.66667H12.5087" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <rect x="3.33301" y="3.33325" width="13.3333" height="13.3333" rx="3" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <rect x="3.33301" y="3.33325" width="13.3333" height="13.3333" rx="3" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M3.33301 12.5L6.66634 9.16663C7.43984 8.42232 8.39284 8.42232 9.16634 9.16663L13.333 13.3333" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M3.33301 12.5L6.66634 9.16663C7.43984 8.42232 8.39284 8.42232 9.16634 9.16663L13.333 13.3333" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M11.667 11.6667L12.5003 10.8334C13.2738 10.0891 14.2268 10.0891 15.0003 10.8334L16.667 12.5" stroke="#4B465C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M11.667 11.6667L12.5003 10.8334C13.2738 10.0891 14.2268 10.0891 15.0003 10.8334L16.667 12.5" stroke="white" stroke-opacity="0.2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg></div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="editor-bottom">
+                        <textarea name="address" id="address" placeholder="Address..."></textarea>
+                      </div>
+                    </div>
+                  </div> -->
+                   
+                    <div class="Create-Profile-btn">
+                    <a href="#" class="btn ">Create Profile</a>
+                   </div>
+                </form>
+            </div>
+        </div>
+       
+        </div>  
+        </div>
+    </div>
+</div>
+</div>
+</main>
+<script>
+  includeHTML();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>

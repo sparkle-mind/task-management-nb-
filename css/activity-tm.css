@@ -1,0 +1,34 @@
+.main-table-content.activity-tm .project-selection-wrp ul {
+    max-width: 290px;
+    margin: 0 3px 0 -12px;
+}
+.main-table-content.activity-tm .project-selection-wrp li {
+    width:100%;
+    padding: 0 12px;
+}
+.main-table-content.activity-tm  .filter-btn .btn {
+    border-radius: 6px;
+    background-color: var(--btn-clr);
+    color: var(--white);
+    border: 1px solid var(--btn-clr);
+}
+.main-table-content.activity-tm  .filter-btn .btn:hover {
+    background-color: var(--black);
+}
+.main-table-content.activity-tm .total-time {
+    padding-left: 15px;
+    font: normal 700 15px/1.3 var(--first-font);
+    color: var(--gray-7c);
+}
+
+
+@media only screen and (max-width: 575px){
+    .main-table-content.activity-tm form {
+        flex-direction: row;
+    }
+    .main-table-content.activity-tm .total-time {
+        width: 100%;
+        text-align: right;
+        margin: 5px;
+    }
+}

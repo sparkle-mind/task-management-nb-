@@ -1,0 +1,6 @@
+@media only screen and (max-width: 1280px){
+    .TM-details .resource-details-bottom-row {
+        border-bottom: unset;
+        margin-top: 30px;
+    }
+}

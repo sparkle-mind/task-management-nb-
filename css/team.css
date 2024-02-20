@@ -1,0 +1,47 @@
+.main-table-content.team .project-selection-wrp ul {
+    max-width: 575px;
+}
+.main-table-content.team .project-selection-wrp li {
+    width: 50%;
+}
+.list-unstyled {
+    display: flex;
+    align-items: center;
+}
+.list-unstyled li {
+    width: 27px;
+    height: 27px;
+    margin-left: -8px;
+    transition: all 0.4s;
+}
+.list-unstyled li img, .list-unstyled li svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: pointer;
+}
+.list-unstyled li:hover img {
+    transform: translateY(-2px);
+}
+.list-unstyled li.extra{
+    margin-left: 5px;
+    color: #4B465C;
+    height: auto;
+}
+
+
+@media screen and (max-width: 575px){
+.main-table-content.team .table-content-title-left {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.main-table-content.team .table-content-title-right {
+    width: 100%;
+    text-align: right;
+}
+.main-table-content.team .project-selection-wrp li {
+    width: 100%;
+}
+}
+
+

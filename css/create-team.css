@@ -1,0 +1,67 @@
+
+.create-team .main-table-content-inner {
+    max-width: 745px;
+    width: 100%;
+}
+.create-team .project-selection-wrp {
+    margin: 40px 0;
+}
+.create-team .filter-btn {
+    text-align: left;
+}
+.create-team .project-selection-wrp form > ul > li {
+    width: 50%;
+    margin-bottom: 34px;
+}
+.create-team .project-selection-wrp form > ul > li.team-mem-list {
+    margin-bottom: 16px;
+    align-self: flex-end;
+}
+.add-btn {
+    width: 38px;
+}
+.add-btn svg{
+    width: 100%;
+    display: block;
+    height: 100%;
+}
+.add-btn .btn {
+    font-size: 25px;
+    padding: 3px 11px;
+    display: flex;
+    align-items: center;
+    line-height: 1.2;
+    justify-content: center;
+    font-weight: 300;
+    border-radius: 6px;
+    box-shadow: -2px -2px 4px -2px rgba(24, 39, 75, 0.08), 4px 2px 4px -2px rgba(24, 39, 75, 0.12);
+    border: 1px solid var(--btn-clr);
+    color: var(--btn-clr);
+    background-color: transparent;
+    height: 40px;
+}
+.minus .btn {
+    border: 1px solid var(--light-red);
+    color: var(--light-red);
+}
+.nice-select-wrap ul {
+    background-color: #efeffa;
+    border-radius: 12px;
+    margin: 7px 0;
+    position: relative;
+    z-index: 2;
+}
+.nice-select-wrap ul li{
+    width: 100%;
+}
+
+
+@media screen and (max-width: 575px){
+.create-team .project-selection-wrp form > ul > li {
+    width: 100%;
+    margin-bottom: 30px;
+}
+.add-btn {
+    margin-left: auto;
+}
+}

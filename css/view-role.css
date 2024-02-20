@@ -1,0 +1,19 @@
+.main-table-content.veiw-role .project-selection-wrp ul {
+    max-width: 933px;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.main-table-content.veiw-role .project-selection-wrp form > ul > li:first-child{
+    max-width: 69%;
+}
+.main-table-content.veiw-role .project-selection-wrp form > ul >  li{
+    max-width: calc(100% - 69%);
+}
+
+@media screen and (max-width: 575px){
+    .main-table-content.veiw-role .project-selection-wrp  form > ul > li:first-child,
+    .main-table-content.veiw-role .project-selection-wrp  form > ul > li{
+        max-width: 100%;
+    }
+}

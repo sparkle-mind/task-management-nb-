@@ -1,0 +1,7 @@
+.add-to-performance .performance-bottom-wrp-inner h2 {
+    font: var(--h4);
+    color: var(--gray-10);
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}

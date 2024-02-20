@@ -1,0 +1,184 @@
+.main-table-content.add-to-performance {
+    max-width: 892px;
+    width: 100%;
+    padding-bottom: 100px;
+}
+.performance-bottom-wrp-inner h2 {
+    font: normal 600 18px/1.2 var(--first-font);
+    margin: 43px 0 8px;
+    color: var(--gray-10);
+}
+.performance-bottom-wrp-inner span,
+.analysis-wrp h3 {
+    font: normal 600 14px/1.2 var(--first-font);
+    margin: 8px 0;
+    color: #7D7D7D;
+}
+.analysis-wrp {
+    margin: 20px 0;
+}
+.analysis-data {
+    margin: 15px -12px 10px;
+    max-width: 575px;
+    width: 100%;
+}
+.analysis-item {
+    width: 33.33%;
+    padding: 0 12px;
+    margin-bottom: 15px;
+}
+.analysis-item-in {
+    border-radius: 6px;
+    background: var(--Light-Solid-Color-Extra-Card-Background, #FFF);
+    box-shadow: 0px 4px 18px 0px rgba(75, 70, 92, 0.10);
+    padding: 24px;
+}
+.analysis-icn {
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    background: var(--green);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+.analysis-item.red .analysis-icn, 
+.analysis-item.red .analysis-percent,
+.analysis-item.red svg path{
+    background:var(--light-opacity-color-danger-danger-16, rgba(234, 84, 85, 0.16));
+    color:var(--light-red);
+    stroke:var(--light-red);
+}
+.analysis-item.green .analysis-icn, 
+.analysis-item.green .analysis-percent,
+.analysis-item.green svg path{
+    background:var(--green);
+    color: #28C76F;
+    stroke:#28C76F;
+}
+.analysis-item.orange .analysis-icn, 
+.analysis-item.orange .analysis-percent,
+.analysis-item.orange svg path{
+    background:var(--orange);
+    color: #FF9F43;
+    stroke:#FF9F43;
+}
+.analysis-item h4{
+    font: normal 600 18px/133% var(--first-font);
+    margin: 14px 0 4px;
+    color: #4B465C;
+}
+.analysis-item span{
+    font: normal 400 15px/150% var(--first-font);
+    margin: 4px 0 14px;
+    color: #4B465C;
+}
+
+.analysis-percent {
+    border-radius: 4px;
+    font: normal 600 13px/1 var(--first-font);
+    color: var(--light-red);
+    padding: 5px 12px;
+    background: var(--light-opacity-color-danger-danger-16, rgba(234, 84, 85, 0.16));
+    display: inline-block;
+}
+.remark-type-wrp {
+    margin-bottom: 35px;
+}
+.remark-type-wrp h5{
+    font: normal 400 13px/1.2 var(--first-font);
+    color: #4B465C;
+    margin-bottom: 12px;
+}
+.remark-type-wrp input {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    display: none;
+}
+
+.remark-type-wrp label {
+    position: relative;
+    padding-left: 28px;
+    font: normal 400 15px/1.2 var(--first-font);
+    color: #4B465C;
+}
+.remark-type-wrp label::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--gray-7c);
+    border-radius: 50%;
+}
+.remark-type-wrp input:checked + label::after {
+    background-color: var(--white);
+    border: 5px solid var(--btn-clr);
+}
+.remark-type-wrp li{
+    display: flex;
+    align-items: center;
+    margin: 12px 0;
+}
+.comment-wrp h4 {
+    font: normal 600 14px/1.2 var(--first-font);
+    margin: 8px 0;
+    color: var(--gray-10);
+}
+.comment-wrp textarea {
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+    border: 1px solid #EEE;
+    padding: 13px 22px;
+    resize: vertical;
+}
+.main-table-content.add-to-performance .save {
+    margin-top: 25px;
+}
+.add-to-performance .performance-bottom-wrp-inner label {
+    font: var(--h4);
+    color: var(--gray-10);
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.add-to-performance .performance-bottom-wrp-inner input {
+    border-radius: 5px;
+    border: 1px solid #EEE;
+    background: #FFF;
+    padding: 13px 15px;
+    height: 45px;
+    width: 100%;
+    font: var(--h4);
+    color: var(--gray-7c);
+}
+.performance-bottom-wrp-inner .r-name {
+    max-width: 552px;
+    width: 100%;
+    margin: 64px 0 34px;
+}
+.performance-bottom-wrp-inner .r-name li{
+    width: 100%;
+}
+@media only screen and (max-width:575px) {
+    .analysis-item {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width:425px) {
+    .analysis-data {
+        margin: 15px 0px 25px;
+    }
+    .analysis-item {
+        width: 100%;
+        padding: 0;
+    }
+}

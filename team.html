@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/planning.css">
+    <link rel="stylesheet" href="css/team.css">
+    <!-- ======= OPEN SENS ========== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- ========= COMPONENTS JS ========= -->
+<script>
+  function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /*loop through a collection of all HTML elements:*/
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          /*search for elements with a certain atrribute:*/
+          file = elmnt.getAttribute("w3-include-html");
+          if (file) {
+              /*make an HTTP request using the attribute value as the file name:*/
+              xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function () {
+                  if (this.readyState == 4) {
+                      if (this.status == 200) {
+                          elmnt.innerHTML = this.responseText;
+                          executeScripts(elmnt);
+                      }
+                      if (this.status == 404) {
+                          elmnt.innerHTML = "Page not found.";
+                      }
+                      /*remove the attribute, and call this function once more:*/
+                      elmnt.removeAttribute("w3-include-html");
+                      includeHTML();
+                  }
+              }
+              console.log("object", xhttp);
+              xhttp.open("GET", file, true);
+              xhttp.send();
+              /*exit the function:*/
+              return;
+          }
+      }
+  };
+
+  function executeScripts(container) {
+      var scripts = container.getElementsByTagName('script');
+      for (var i = 0; i < scripts.length; i++) {
+          var script = document.createElement('script');
+          script.text = scripts[i].text;
+          container.appendChild(script).parentNode.removeChild(script);
+      }
+  }
+</script>
+<!-- ========= COMPONENTS JS ========= -->
+<main class="main-wrp">
+<div class="overlay"></div>
+<div class="main-wrp-inner flex justify-between">
+<!-- ========== aside menu start ============ -->
+<aside id="aside-menu" w3-include-html="/Componets/Comman/aside.html"></aside>
+<!-- ========== aside menu end ============ -->
+<div id="right-content">
+    <!-- ========== header start ============ -->
+    <div w3-include-html="/Componets/Comman/header.html"></div>
+    <!-- ========== header end ============ -->
+<div class="main-table-content planning team">
+    <div class="container">
+    <div class="main-table-content-inner">
+        <div class="main-table-cont-top">
+        <div class="table-content-title flex justify-between align-end">
+            <div class="table-content-title-left">
+              <h1>Teams</h1>
+              <ul class="table-breadcrumbs flex align-center">
+                <li><a href="#">Dashboard</a></li>
+                <li class="active"><a href="#">Resources</a></li>
+              </ul>
+            </div>
+            <div class="table-content-title-right">
+              <a href="create-team.html"class="btn">Create Team</a>
+            </div>
+            
+        </div>
+        <div class="project-selection-wrp">
+            <form action="post">
+                <ul class="flex">
+                   
+                    <li>
+                        <label for="search">TL Name</label>
+                        <input type="search" placeholder="Search">
+                    </li>
+                    <li>
+                        <label for="Status">Status</label>
+                        <select class="custom-select" name="Status">
+                            <option>-Select-</option>
+                            <option value="ideal">ideal</option>
+                            <option value="working"> working</option>
+                            <option value="pop">Pop</option>
+                           
+                        </select>
+                    </li>
+                    
+                </ul>
+
+                <div class="filter-btn">
+                <a href="#" class="btn ">Filter</a>
+            </div>
+            </form>
+        </div>
+    </div>
+    <div class="main-table-bottom">
+        <div class="table-show-num flex align-center">
+            <label for="Show">Show</label>
+            <select class="custom-select" name="Show">
+                <option>10</option>
+                <option value="20">20</option>
+                <option value="30"> 30</option>
+               
+            </select>
+            <span>Entries</span>
+        </div>
+        <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  
+                  <th>Team Name</th>
+                  <th>Team Leader</th>
+                  <th>Team Members</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+                
+              </thead>
+              <tbody>
+                  <tr>
+                  <td>Team1</td>
+                  <td>Raj Patel</td>
+                  <td>
+                    <ul class="list-unstyled">
+                      <li>
+                        <img src="images/tem-per.png" alt="team-person" class="rounded-circle">
+                      </li>
+                      <li>
+                        <img src="images/tem-per.png" alt="team-person" class="rounded-circle">
+                      </li>
+                      <li>
+                        <img src="images/tem-per.png" alt="team-person" class="rounded-circle">
+                      </li>
+                      <li class="extra">...+5</li>
+                    
+                    </ul>
+                  </td>
+
+                  <td>
+                  <span class="status-btn completed">
+                    Active
+                 </span>
+                 </td>
+                  <td><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M10.3866 7.99995C10.3866 9.31995 9.31995 10.3866 7.99995 10.3866C6.67995 10.3866 5.61328 9.31995 5.61328 7.99995C5.61328 6.67995 6.67995 5.61328 7.99995 5.61328C9.31995 5.61328 10.3866 6.67995 10.3866 7.99995Z" stroke="#51526C" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M7.9999 13.5134C10.3532 13.5134 12.5466 12.1268 14.0732 9.72677C14.6732 8.78677 14.6732 7.20677 14.0732 6.26677C12.5466 3.86677 10.3532 2.4801 7.9999 2.4801C5.64656 2.4801 3.45323 3.86677 1.92656 6.26677C1.32656 7.20677 1.32656 8.78677 1.92656 9.72677C3.45323 12.1268 5.64656 13.5134 7.9999 13.5134Z" stroke="#51526C" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </td>
+                  
+                  </tr>
+                  <tr>
+                    <td>Team2</td>
+                    <td>Raj Patel</td>
+                    <td>
+                      <ul class="list-unstyled">
+                        <li>
+                          <img src="images/tem-per.png" alt="team-person" class="rounded-circle">
+                        </li>
+                        <li>
+                          <img src="images/tem-per.png" alt="team-person" class="rounded-circle">
+                        </li>
+                        <li>
+                          <img src="images/tem-per.png" alt="team-person" class="rounded-circle">
+                        </li>
+                        <li class="extra">...+5</li>
+                      
+                      </ul>
+                    </td>
+  
+                    <td>
+                    <span class="status-btn Disapproved">
+                      Inactive
+                   </span>
+                   </td>
+                    <td><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M10.3866 7.99995C10.3866 9.31995 9.31995 10.3866 7.99995 10.3866C6.67995 10.3866 5.61328 9.31995 5.61328 7.99995C5.61328 6.67995 6.67995 5.61328 7.99995 5.61328C9.31995 5.61328 10.3866 6.67995 10.3866 7.99995Z" stroke="#51526C" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M7.9999 13.5134C10.3532 13.5134 12.5466 12.1268 14.0732 9.72677C14.6732 8.78677 14.6732 7.20677 14.0732 6.26677C12.5466 3.86677 10.3532 2.4801 7.9999 2.4801C5.64656 2.4801 3.45323 3.86677 1.92656 6.26677C1.32656 7.20677 1.32656 8.78677 1.92656 9.72677C3.45323 12.1268 5.64656 13.5134 7.9999 13.5134Z" stroke="#51526C" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </td>
+                    
+                  </tr>
+              </tbody>
+            </table>
+            
+        </div>
+        <div class="table-pagination flex align-center justify-between">
+            <div class="table-pagi-left">
+                <span>Showing 1 to 6 of 100 entries</span>
+            </div>
+            <div class="table-pagi-right">
+                <ul class="flex align-center">
+                    <li><a href="#" >Previous</a></li>
+                    <li ><a href="#" class="active">1</a></li>
+                    <li><a href="#" >2</a></li>
+                    <li><a href="#" >3</a></li>
+                    <li><a href="#" >4</a></li>
+                    <li><a href="#" >5</a></li>
+                    <li><a href="#" >Next</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+        
+    </div>  
+</div>
+</div>
+</div>
+</div>
+</main>
+<script>
+  includeHTML();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>

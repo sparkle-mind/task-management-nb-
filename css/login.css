@@ -1,0 +1,133 @@
+
+:root{
+    --purple:#DFDFEE;
+}
+
+
+.login-wrp{
+    background-color: var(--purple);
+}
+.login-inner {
+    height: 100vh;
+}
+.login-form {
+    max-width: 582px;
+    width: 50%;
+    background-color: #FAFAFE;
+    padding: 4.9%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+}
+.login-form h1 {
+    color:  var(--gray-10);
+    font: normal 600 30px/1.23 var(--first-font);
+    margin-bottom: 60px;
+    text-align: center;
+}
+.login-form label{
+    display: block;
+    font: var(--h4);
+    font-weight: 600;
+    color:  var(--gray-7c);
+    margin-bottom: 10px;
+}
+.login-form input{
+    border-radius: 10px;
+    background-color: var(--white);
+    padding: 18px 20px;
+    height: 55px;
+    width: 100%;
+    font: var(--h4);
+    color: var(--gray-7c);
+}
+.login-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 18px;
+}
+.login-img img {
+    width: 100%;
+    display: block;
+}
+.login-wrp .input-box {
+    margin-bottom: 25px;
+}
+.login-wrp .rembar input {
+    width: 20px;
+    height: 20px;
+    margin-right: 9px;
+    border-radius: 4px;
+    border: 1px solid #DCDCDC;
+}
+.login-wrp .rembar {
+    display: flex;
+    align-items: center;
+}
+
+.login-wrp .rembar label{
+    margin: 0;
+    text-transform: capitalize;
+}
+.login-wrp .forgot-pw {
+    margin: -13px 0 58px;
+}
+.login-wrp .forgot-pw span {
+    font: var(--h4);
+    font-weight: 600;
+    color: var(--black);
+    text-transform: capitalize;
+}
+.login-wrp .btn {
+    width: 100%;
+    border: none;
+    box-shadow: -2px -2px 4px -2px rgba(24, 39, 75, 0.08), 4px 2px 4px -2px rgba(24, 39, 75, 0.12);
+    padding: 14.5px 28px;
+}
+
+.sign-up h5 {
+    text-align: center;
+    margin: 20px 0;
+    font: var(--h4);
+    font-weight: 700;
+    color: var(--black);
+}
+.sign-up h5 a{
+    color: var(--btn-clr);
+}
+.login-form input[type="password"] {
+    padding-right: 50px;
+}
+.pw-wrp {
+    position: relative;
+}
+.toggle-password {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    cursor: pointer;
+    background-image: url("../images/pw.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.toggle-password.show{
+    background-image: url("../images/pw-2.svg");
+}
+
+
+@media only screen and (max-width:767px) {
+    .login-form {
+        max-width: 100%;
+        width: 100%;
+        background-color: #FAFAFE;
+    }
+    .login-img {
+        display: none;
+    }
+}

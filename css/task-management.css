@@ -1,0 +1,46 @@
+.main-table-content.planning.task-management .project-selection-wrp form >ul {
+    max-width: 100%;
+    margin: 0 -12px!important;
+}
+.main-table-content.planning.task-management  .project-selection-wrp li {
+    width: 25%;
+    margin-bottom: 18px;
+}
+.main-table-content.planning.task-management form {
+    flex-direction: column;
+    margin: 0 0 0 -24px
+}
+.planning.task-management .project-selection-wrp {
+    margin: 20px 0 0;
+}
+.planning.task-management .main-table-bottom {
+    margin: -15px 0 25px;
+}
+.table-wrapper table td .status-btn.Assigned-InProgress{
+    background-color: #00cfe629;
+    color: #00CFE8;
+}
+.main-table-content.planning.task-management .nice-select-wrap > ul {
+    background-color: #efeffa;
+    border-radius: 12px;
+    margin: 7px 0;
+    position: relative;
+    z-index: 2;
+    margin: 11px 0 !IMPORTANT;
+}
+
+
+@media only screen and (max-width:767px) {
+    .main-table-content.planning.task-management  .project-selection-wrp li {
+        width: 50%;
+    }
+}
+@media only screen and (max-width:575px) {
+    .main-table-content.planning.task-management  .project-selection-wrp li {
+        width: 100%;
+    }
+    .main-table-content.planning.task-management .project-selection-wrp form >ul,
+    .main-table-content.planning.task-management form{
+        margin: 0  !important;
+    }
+}
