@@ -331,6 +331,20 @@ button:hover,
     font-weight: 400;
     color: var(--gray-7c);
 }
+.aside-wrp {
+    max-width: 260px;
+    width: 100%;
+    background-color: var(--white);
+    position: sticky;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    overflow: auto;
+    padding: 23px 10px;
+    transition: width 0.2s;
+    box-shadow: -2px -2px 4px -2px rgba(24, 39, 75, 0.08), 4px 2px 4px -2px rgba(24, 39, 75, 0.12);
+    z-index: 5;
+}
 .aside-top {
     padding: 0 13px;
 }
