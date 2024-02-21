@@ -680,12 +680,12 @@ color: var(--gray-7c);
     .hamburger-menu,.close-menu {
         display: block;
     }
-    #aside-menu {
+   .aside-wrp{
         transform: translateX(-100%);
         max-width: 0;
         padding: 0;
     }
-    body.active-aside #aside-menu{
+    body.active-aside .aside-wrp{
         position: fixed;
         left: 0;
         top: 0;
